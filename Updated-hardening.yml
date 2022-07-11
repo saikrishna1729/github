@@ -70,17 +70,17 @@
          key: ForceLogoffWhenHourExpire
          value: 1
         
-    #  - name: Change the NewAdministratorName
-    #   win_security_policy:
-    #      section: System Access
-    #      key: NewAdministratorName
-    #      value: "_winadmin_"
+     - name: Change the NewAdministratorName
+       win_security_policy:
+         section: System Access
+         key: NewAdministratorName
+         value: "_winadmin_"
 
-    #  - name: Change the NewGuestName
-    #   win_security_policy:
-    #      section: System Access
-    #      key: NewGuestName
-    #      value: "_winguest_"
+     - name: Change the NewGuestName
+       win_security_policy:
+         section: System Access
+         key: NewGuestName
+         value: "_winguest_"
 
      - name:  Change the ClearTextPassword
        win_security_policy:
@@ -254,8 +254,7 @@
           - Administrators
           - Backup Operators
           - Performance Log Users
-          - IIS_USRS
-         action: yes
+         action: set
 
      - name: Change the SeInteractiveLogonRight
        win_user_right:
@@ -370,7 +369,7 @@
        win_user_right:
          name: SeRemoteInteractiveLogonRight
          users: 
-          - Administrators,
+          - Administrators
           - Remote Desktop Users
          action: set
 
