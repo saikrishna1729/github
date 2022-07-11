@@ -1,0 +1,432 @@
+---
+ - name: windows hardening
+   hosts: all
+   gather_facts: false
+   ignore_errors: True
+   tasks:
+     - name: Change the MinimumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordAge
+         value: 2
+
+     - name:  Change the MaximumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MaximumPasswordAge
+         value: 90
+
+     - name: Change the MinimumPasswordLength
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordLength
+         value: 8
+        
+     - name: Change the PasswordComplexity
+       win_security_policy:
+         section: System Access
+         key: PasswordComplexity
+         value: 1
+
+     - name: Change the MinimumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordAge
+         value: 2
+
+     - name:  Change the PasswordHistorySize
+       win_security_policy:
+         section: System Access
+         key: PasswordHistorySize
+         value: 6
+
+     - name: Change the LockoutBadCount
+       win_security_policy:
+         section: System Access
+         key: LockoutBadCount
+         value: 5
+        
+     - name: Change the ResetLockoutCount
+       win_security_policy:
+         section: System Access
+         key: ResetLockoutCount
+         value: 99999  
+    
+     - name: Change the LockoutDuration
+       win_security_policy:
+         section: System Access
+         key: LockoutDuration
+         value: -1
+
+     - name:  Change the RequireLogonToChangePassword
+       win_security_policy:
+         section: System Access
+         key: RequireLogonToChangePassword
+         value: 0
+
+     - name: Change the ForceLogoffWhenHourExpire
+       win_security_policy:
+         section: System Access
+         key: ForceLogoffWhenHourExpire
+         value: 1
+        
+    #  - name: Change the NewAdministratorName
+    #   win_security_policy:
+    #      section: System Access
+    #      key: NewAdministratorName
+    #      value: "_winadmin_"
+
+    #  - name: Change the NewGuestName
+    #   win_security_policy:
+    #      section: System Access
+    #      key: NewGuestName
+    #      value: "_winguest_"
+
+     - name:  Change the ClearTextPassword
+       win_security_policy:
+         section: System Access
+         key: ClearTextPassword
+         value: 0
+
+     - name: Change the LSAAnonymousNameLookup
+       win_security_policy:
+         section: System Access
+         key: LSAAnonymousNameLookup
+         value: 0
+        
+     - name: Change the EnableAdminAccount
+       win_security_policy:
+         section: System Access
+         key: EnableAdminAccount
+         value: 1 
+
+     - name: Change the EnableGuestAccount
+       win_security_policy:
+         section: System Access
+         key: EnableGuestAccount
+         value: 0 
+        
+     - name: Change the AuditSystemEvents
+       win_security_policy:
+         section: Event Audit
+         key: AuditSystemEvents
+         value: 0 
+        
+     - name: Change the AuditLogonEvents
+       win_security_policy:
+         section: Event Audit
+         key: AuditLogonEvents
+         value: 0 
+        
+     - name: Change the AuditObjectAccess
+       win_security_policy:
+         section: Event Audit
+         key: AuditObjectAccess
+         value: 0 
+        
+     - name: Change the AuditPrivilegeUse
+       win_security_policy:
+         section: Event Audit
+         key: AuditPrivilegeUse
+         value: 0 
+        
+     - name: Change the AuditPolicyChange
+       win_security_policy:
+         section: Event Audit
+         key: AuditPolicyChange
+         value: 0
+        
+     - name: Change the AuditAccountManage
+       win_security_policy:
+         section: Event Audit
+         key: AuditAccountManage
+         value: 0
+        
+     - name: Change the AuditProcessTracking
+       win_security_policy:
+         section: Event Audit
+         key: AuditProcessTracking
+         value: 0 
+        
+     - name: Change the AuditDSAccess
+       win_security_policy:
+         section: Event Audit
+         key: AuditDSAccess
+         value: 0
+        
+     - name: Change the AuditAccountLogon
+       win_security_policy:
+         section: Event Audit
+         key: AuditAccountLogon
+         value: 0
+      
+             
+     - name: Change the SeNetworkLogonRight
+       win_user_right:
+         name: SeNetworkLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeBackupPrivilege
+       win_user_right:
+         name: SeBackupPrivilege
+         users: 
+          - Administrators
+          - Backup Operators
+         action: set
+
+     - name: Change the SeChangeNotifyPrivilege
+       win_user_right:
+         name: SeChangeNotifyPrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+          - Backup Operators
+         action: set
+
+     - name: Change the SeSystemtimePrivilege
+       win_user_right:
+         name: SeSystemtimePrivilege
+         users:
+          - Local Service
+          - Administrators
+         action: set
+
+     - name: Change the SeCreatePagefilePrivilege
+       win_user_right:
+         name: SeCreatePagefilePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDebugPrivilege
+       win_user_right:
+         name: SeDebugPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteShutdownPrivilege
+       win_user_right:
+         name: SeRemoteShutdownPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAuditPrivilege
+       win_user_right:
+         name: SeAuditPrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+         action: set
+
+     - name: Change the SeIncreaseQuotaPrivilege
+       win_user_right:
+         name: SeIncreaseQuotaPrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+         action: set
+
+     - name: Change the SeIncreaseBasePriorityPrivilege
+       win_user_right:
+         name: SeIncreaseBasePriorityPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeLoadDriverPrivilege
+       win_user_right:
+         name: SeLoadDriverPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeBatchLogonRight
+       win_user_right:
+         name: SeBatchLogonRight
+         users: 
+          - Administrators
+          - Backup Operators
+          - Performance Log Users
+          - IIS_USRS
+         action: yes
+
+     - name: Change the SeInteractiveLogonRight
+       win_user_right:
+         name: SeInteractiveLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSecurityPrivilege
+       win_user_right:
+         name: SeSecurityPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemEnvironmentPrivilege
+       win_user_right:
+         name: SeSystemEnvironmentPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeProfileSingleProcessPrivilege
+       win_user_right:
+         name: SeProfileSingleProcessPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemProfilePrivilege
+       win_user_right:
+         name: SeSystemProfilePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAssignPrimaryTokenPrivilege
+       win_user_right:
+         name: SeAssignPrimaryTokenPrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+         action: set
+
+     - name: Change the SeRestorePrivilege
+       win_user_right:
+         name: SeRestorePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeShutdownPrivilege
+       win_user_right:
+         name: SeShutdownPrivilege
+         users: 
+          - _winadmin_
+          - Administrators
+         action: set
+
+     - name: Change the SeTakeOwnershipPrivilege
+       win_user_right:
+         name: SeTakeOwnershipPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDenyNetworkLogonRight
+       win_user_right:
+         name: SeDenyNetworkLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeDenyBatchLogonRight
+       win_user_right:
+         name: SeDenyBatchLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeDenyServiceLogonRight
+       win_user_right:
+         name: SeDenyServiceLogonRight
+         users: 
+          - Guests
+         action: set
+
+
+     - name: Change the SeDenyInteractiveLogonRight
+       win_user_right:
+         name: SeDenyInteractiveLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeUndockPrivilege
+       win_user_right:
+         name: SeUndockPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeManageVolumePrivilege
+       win_user_right:
+         name: SeManageVolumePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeRemoteInteractiveLogonRight
+         users: 
+          - Administrators,
+          - Remote Desktop Users
+         action: set
+
+     - name: Change the SeDenyRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeDenyRemoteInteractiveLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeImpersonatePrivilege
+       win_user_right:
+         name: SeImpersonatePrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+          - SERVICE
+         action: set
+
+     - name: Change the SeCreateGlobalPrivilege
+       win_user_right:
+         name: SeCreateGlobalPrivilege
+         users: 
+          - Local Service
+          - NETWORK SERVICE
+          - Administrators
+          - SERVICE
+         action: set
+
+     - name: Change the SeIncreaseWorkingSetPrivilege
+       win_user_right:
+         name: SeIncreaseWorkingSetPrivilege
+         users: 
+          - Local Service
+          - Administrators
+         action: set
+
+     - name: Change the SeTimeZonePrivilege
+       win_user_right:
+         name: SeTimeZonePrivilege
+         users: 
+          - Local Service
+          - Administrators
+         action: set
+
+     - name: Change the SeCreateSymbolicLinkPrivilege
+       win_user_right:
+         name: SeCreateSymbolicLinkPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDelegateSessionUserImpersonatePrivilege
+       win_user_right:
+         name: SeDelegateSessionUserImpersonatePrivilege
+         users: 
+          - Administrators
+         action: set
