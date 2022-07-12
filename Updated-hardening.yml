@@ -147,4 +147,10 @@
        win_security_policy:
          section: Event Audit
          key: AuditAccountLogon
-         value: 0
+         value: 2
+
+     - name: Change the AuditAccountLogon
+       win_security_policy:
+         section: Registry
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel
+         value: 4,0
