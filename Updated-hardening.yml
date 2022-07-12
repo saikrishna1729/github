@@ -149,8 +149,124 @@
          key: AuditAccountLogon
          value: 2
 
-     - name: Change the AuditAccountLogon
+     - name: Change the Recovery console Security Level
        win_security_policy:
          section: Registry Values
          key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel
          value: 4,0
+
+     - name: Change the Recovery console Command
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SetCommand
+         value: 4,0
+
+     - name: Change the Allocate CDROms
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateCDRoms
+         value: 1,"1"
+
+     - name: Change the Allocate DASD
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateDASD
+         value: 1,"1"
+
+     - name: Change the Allocate Floppies
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateFloppies
+         value: 1,"1"
+
+     - name: Change the CachedLogons Count
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\CachedLogonsCount
+         value: 1,"0"
+
+     - name: Change Force Unlock Logon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ForceUnlockLogon
+         value: 4,0
+
+     - name: Password expiry Warning
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\PasswordExpiryWarning
+         value: 4,5
+
+     - name: Change the ScRemoveOption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ScRemoveOption
+         value: 1,"1"
+
+     - name: Change the ConsentPromptBehaviorAdmin
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin
+         value: 4,2
+
+     - name: Change the ConsentPromptBehaviorUser
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorUser
+         value: 4,0
+
+     - name: Change the DisableCAD
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableCAD
+         value: 4,0
+
+     - name: Change the DontDisplayLastUserName
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DontDisplayLastUserName
+         value: 4,1
+
+     - name: EnableLUA
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA
+         value: 4,1
+
+     - name: Change the EnableSecureUIAPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableSecureUIAPaths
+         value: 4,1
+
+     - name: Change the EnableUIADesktopToggle
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableUIADesktopToggle
+         value: 4,0
+
+     - name: Change the EnableVirtualization
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableVirtualization
+         value: 4,1
+
+     - name: FilterAdministratorToken
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\FilterAdministratorToken
+         value: 4,1
+
+     - name: Change the LegalNoticeCaption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeCaption
+         value: 1,""
+
+     - name: Change the LegalNoticeText
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText=7,
+         value: 7,"Legal Notice"
+
+    
