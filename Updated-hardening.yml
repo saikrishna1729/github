@@ -151,6 +151,6 @@
 
      - name: Change the AuditAccountLogon
        win_security_policy:
-         section: Registry
+         section: Registry Values
          key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel
          value: 4,0
