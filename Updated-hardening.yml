@@ -594,7 +594,7 @@
          users: 
           - .\Administrators
           - 'Backup Operators'
-          - 'PERFLOG_USERS'
+          - 'Performance Log Users'
          action: set
 
 
@@ -676,7 +676,7 @@
          name: SeDenyNetworkLogonRight
          users: 
           - Guests
-          - ANONYMOUS
+          - S-1-5-7
          action: set
 
      - name: Change the SeDenyBatchLogonRight
