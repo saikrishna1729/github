@@ -501,13 +501,7 @@
          value: 4,1
 
 
-     - name: Change the SeNetworkLogonRight
-       win_user_right:
-         name: SeNetworkLogonRight
-         users: 
-          - 'Authenticated Users'
-          - .\Administrators
-         action: set
+    
 
      - name: Change the SeBackupPrivilege
        win_user_right:
