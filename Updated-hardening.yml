@@ -719,7 +719,7 @@
          name: SeRemoteInteractiveLogonRight
          users: 
           - Administrators
-          - *S-1-5-32-555
+          - 'Remote Desktop Users'
          action: set
 
      - name: Change the SeDenyRemoteInteractiveLogonRight
