@@ -266,7 +266,7 @@
      - name: Change the LegalNoticeText
        win_security_policy:
          section: Registry Values
-         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText=7,
-         value: 7,"Legal Notice"
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText
+         value: 7,"This is a restricted system"
 
     
