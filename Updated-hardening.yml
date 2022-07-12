@@ -267,6 +267,236 @@
        win_security_policy:
          section: Registry Values
          key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText
-         value: 7,"This is a restricted system"
+         value: 7,""
 
-    
+     - name: Change the PromptOnSecureDesktop
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop
+         value: 4,1
+     - name: Change the ScForceOption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ScForceOption
+         value: 4,0
+     - name: Change the ShutdownWithoutLogon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ShutdownWithoutLogon
+         value: 4,0
+     - name: Change the UndockWithoutLogon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\UndockWithoutLogon
+         value: 4,0
+     - name: Change the ValidateAdminCodeSignatures
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ValidateAdminCodeSignatures
+         value: 4,0
+     - name: Enable ForceKeyProtection
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Policies\Microsoft\Cryptography\ForceKeyProtection
+         value: 4,1
+     - name: Set AuthenticodeEnabled 
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\AuthenticodeEnabled
+         value: 4,1
+     - name: Change the AuditBaseObjects
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\AuditBaseObjects
+         value: 4,0
+     - name: Change the CrashOnAuditFail
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\CrashOnAuditFail
+         value: 4,0
+     - name: Change DisableDomainCreds
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds
+         value: 4,0
+     - name: Change EveryoneIncludesAnonymous
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\EveryoneIncludesAnonymous
+         value: 4,0
+     - name: Disable FIPSAlgorithmPolicy
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled
+         value: 4,0
+     - name: Change ForceGuest
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\ForceGuest
+         value: 4,0
+     - name: Change the FullPrivilegeAuditing
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\FullPrivilegeAuditing
+         value: 3,0
+     - name: LimitBlankPasswordUse
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\LimitBlankPasswordUse
+         value: 4,1
+     - name: Change the LmCompatibilityLevel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\LmCompatibilityLevel
+         value: 4,5
+     - name: Change the NTLMMinClientSec
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinClientSec
+         value: 4,537395200
+     - name: Change the NTLMMinServerSec
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinServerSec
+         value: 4,537395200
+     - name: Disable LM Hash
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash
+         value: 4,1
+     - name: RestrictAnonymous
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymous
+         value: 4,1
+     - name: RestrictAnonymousSAM
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymousSAM
+         value: 4,1
+     - name: Change the SCENoApplyLegacyAuditPolicy
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\SCENoApplyLegacyAuditPolicy
+         value: 4,1
+     - name: Change the UseMachineId
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\UseMachineId
+         value: 4,1
+     - name: Change the AddPrinterDrivers
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers\AddPrinterDrivers
+         value: 4,1
+     - name: Change the AllowedExactPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths\Machine
+         value: 7,System\CurrentControlSet\Control\ProductOptions,System\CurrentControlSet\Control\Server Applications,Software\Microsoft\Windows NT\CurrentVersion
+     - name: Change the AllowedPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths\Machine
+         value: 7,System\CurrentControlSet\Control\Print\Printers|#|System\CurrentControlSet\Services\Eventlog|#|Software\Microsoft\OLAP Server|#|Software\Microsoft\Windows NT\CurrentVersion\Print|#|Software\Microsoft\Windows NT\CurrentVersion\Windows|#|System\CurrentControlSet\Control\ContentIndex|#|System\CurrentControlSet\Control\Terminal Server|#|System\CurrentControlSet\Control\Terminal Server\UserConfig|#|System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration|#|Software\Microsoft\Windows NT\CurrentVersion\Perflib|#|System\CurrentControlSet\Services\SysmonLog
+     - name: Change the ObCaseInsensitive
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\Kernel\ObCaseInsensitive
+         value: 4,1
+     - name: Change the ClearPageFileAtShutdown
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\ClearPageFileAtShutdown
+         value: 4,0
+     - name: Change the ProtectionMode
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\ProtectionMode
+         value: 4,1
+     - name: Change the SubSystems
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\SubSystems\optional
+         value: 7,Posix
+     - name: Change the AutoDisconnect
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\AutoDisconnect
+         value: 4,15
+     - name: Set EnableForcedLogOff
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableForcedLogOff
+         value: 4,1
+     - name: Set EnableSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableSecuritySignature
+         value: 4,1
+     - name: Set NullSessionPipes
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\NullSessionPipes
+         value: 7,""
+     - name: Set RequireSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RequireSecuritySignature
+         value: 4,1
+     - name: RestrictNullSessAccess
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RestrictNullSessAccess
+         value: 4,1
+     - name: Disable PlainTextPassword
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnablePlainTextPassword
+         value: 4,0
+     - name: EnableSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnableSecuritySignature
+         value: 4,1
+     - name: RequireSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\RequireSecuritySignature
+         value: 4,1
+     - name: Enable LDAPClientIntegrity
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientIntegrity
+         value: 4,1
+     - name: EnablePasswordChange
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\DisablePasswordChange
+         value: 4,0
+     - name: Set MaximumPasswordAge
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\MaximumPasswordAge
+         value: 4,30
+     - name: Change the RequireSignOrSeal
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireSignOrSeal
+         value: 4,1
+     - name: Change the RequireStrongKey
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireStrongKey
+         value: 4,1
+     - name: Change the SealSecureChannel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SealSecureChannel
+         value: 4,1
+     - name: Enable SignSecureChannel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SignSecureChannel
+         value: 4,1
+     
