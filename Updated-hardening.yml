@@ -267,7 +267,7 @@
        win_security_policy:
          section: Registry Values
          key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText
-         value: 7,""
+         value: 7,
 
      - name: Change the PromptOnSecureDesktop
        win_security_policy:
@@ -438,7 +438,7 @@
        win_security_policy:
          section: Registry Values
          key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\NullSessionPipes
-         value: 7,""
+         value: 7,
      - name: Set RequireSecuritySignature
        win_security_policy:
          section: Registry Values
