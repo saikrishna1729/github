@@ -499,4 +499,290 @@
          section: Registry Values
          key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SignSecureChannel
          value: 4,1
-     
+
+
+     - name: Change the SeNetworkLogonRight
+       win_user_right:
+         name: SeNetworkLogonRight
+         users: 
+          - *S-1-5-11
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeBackupPrivilege
+       win_user_right:
+         name: SeBackupPrivilege
+         users: 
+          - *S-1-5-32-544
+          - *S-1-5-32-551
+         action: set
+
+     - name: Change the SeChangeNotifyPrivilege
+       win_user_right:
+         name: SeChangeNotifyPrivilege
+         users: 
+          - *S-1-5-11
+          - *S-1-5-19
+          - *S-1-5-20
+          - *S-1-5-32-544
+          - *S-1-5-32-551
+         action: set
+
+     - name: Change the SeSystemtimePrivilege
+       win_user_right:
+         name: SeSystemtimePrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeCreatePagefilePrivilege
+       win_user_right:
+         name: SeCreatePagefilePrivilege
+         users: 
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeDebugPrivilege
+       win_user_right:
+         name: SeDebugPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteShutdownPrivilege
+       win_user_right:
+         name: SeRemoteShutdownPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAuditPrivilege
+       win_user_right:
+         name: SeAuditPrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-20
+         action: set
+
+     - name: Change the SeIncreaseQuotaPrivilege
+       win_user_right:
+         name: SeIncreaseQuotaPrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-20
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeIncreaseBasePriorityPrivilege
+       win_user_right:
+         name: SeIncreaseBasePriorityPrivilege
+         users: 
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeLoadDriverPrivilege
+       win_user_right:
+         name: SeLoadDriverPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeBatchLogonRight
+       win_user_right:
+         name: SeBatchLogonRight
+         users: 
+          - *S-1-5-32-544
+          - *S-1-5-32-551
+          - *S-1-5-32-559
+         action: set
+
+     - name: Change the SeServiceLogonRight
+       win_user_right:
+         name: SeServiceLogonRight
+         users: 
+          - *S-1-5-80-0
+         action: set
+
+     - name: Change the SeNetworkLogonRight
+       win_user_right:
+         name: SeNetworkLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeInteractiveLogonRight
+       win_user_right:
+         name: SeInteractiveLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSecurityPrivilege
+       win_user_right:
+         name: SeSecurityPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemEnvironmentPrivilege
+       win_user_right:
+         name: SeSystemEnvironmentPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeProfileSingleProcessPrivilege
+       win_user_right:
+         name: SeProfileSingleProcessPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemProfilePrivilege
+       win_user_right:
+         name: SeSystemProfilePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAssignPrimaryTokenPrivilege
+       win_user_right:
+         name: SeAssignPrimaryTokenPrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-20
+         action: set
+
+     - name: Change the SeRestorePrivilege
+       win_user_right:
+         name: SeRestorePrivilege
+         users: 
+          - Administrators
+          - *S-1-5-32-551
+         action: set
+
+     - name: Change the SeShutdownPrivilege
+       win_user_right:
+         name: SeShutdownPrivilege
+         users: 
+          - Administrators
+          - *S-1-5-32-551
+         action: set
+
+     - name: Change the SeTakeOwnershipPrivilege
+       win_user_right:
+         name: SeTakeOwnershipPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDenyNetworkLogonRight
+       win_user_right:
+         name: SeDenyNetworkLogonRight
+         users: 
+          - *S-1-5-32-546
+          - *S-1-5-7
+         action: set
+
+     - name: Change the SeDenyBatchLogonRight
+       win_user_right:
+         name: SeDenyBatchLogonRight
+         users: 
+          - *S-1-5-32-546
+         action: set
+
+     - name: Change the SeDenyServiceLogonRight
+       win_user_right:
+         name: SeDenyServiceLogonRight
+         users: 
+          - *S-1-5-32-546
+         action: set
+
+     - name: Change the SeDenyInteractiveLogonRight
+       win_user_right:
+         name: SeDenyInteractiveLogonRight
+         users: 
+          - *S-1-5-32-546
+         action: set
+
+     - name: Change the SeUndockPrivilege
+       win_user_right:
+         name: SeUndockPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeManageVolumePrivilege
+       win_user_right:
+         name: SeManageVolumePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeRemoteInteractiveLogonRight
+         users: 
+          - Administrators
+          - *S-1-5-32-555
+         action: set
+
+     - name: Change the SeDenyRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeDenyRemoteInteractiveLogonRight
+         users: 
+          - *S-1-5-32-546
+         action: set
+
+     - name: Change the SeImpersonatePrivilege
+       win_user_right:
+         name: SeImpersonatePrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-20
+          - *S-1-5-32-544
+          - *S-1-5-6
+         action: set
+
+
+     - name: Change the SeCreateGlobalPrivilege
+       win_user_right:
+         name: SeCreateGlobalPrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-20
+          - *S-1-5-32-544
+          - *S-1-5-6
+         action: set
+
+
+     - name: Change the SeIncreaseWorkingSetPrivilege
+       win_user_right:
+         name: SeIncreaseWorkingSetPrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeTimeZonePrivilege
+       win_user_right:
+         name: SeTimeZonePrivilege
+         users: 
+          - *S-1-5-19
+          - *S-1-5-32-544
+         action: set
+
+     - name: Change the SeCreateSymbolicLinkPrivilege
+       win_user_right:
+         name: SeCreateSymbolicLinkPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDelegateSessionUserImpersonatePrivilege
+       win_user_right:
+         name: SeDelegateSessionUserImpersonatePrivilege
+         users: 
+          - Administrators
+         action: set
