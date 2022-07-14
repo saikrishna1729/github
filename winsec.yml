@@ -1,0 +1,899 @@
+---
+ - name: windows hardening
+   hosts: all
+   gather_facts: false
+   ignore_errors: True
+   tasks:
+     - name: Change the MinimumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordAge
+         value: 2
+
+     - name:  Change the MaximumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MaximumPasswordAge
+         value: 42
+
+     - name: Change the MinimumPasswordLength
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordLength
+         value: 8
+        
+     - name: Change the PasswordComplexity
+       win_security_policy:
+         section: System Access
+         key: PasswordComplexity
+         value: 1
+
+     - name: Change the MinimumPasswordAge
+       win_security_policy:
+         section: System Access
+         key: MinimumPasswordAge
+         value: 2
+
+     - name:  Change the PasswordHistorySize
+       win_security_policy:
+         section: System Access
+         key: PasswordHistorySize
+         value: 24
+
+     - name: Change the LockoutBadCount
+       win_security_policy:
+         section: System Access
+         key: LockoutBadCount
+         value: 0
+        
+
+     - name:  Change the RequireLogonToChangePassword
+       win_security_policy:
+         section: System Access
+         key: RequireLogonToChangePassword
+         value: 0
+
+     - name: Change the ForceLogoffWhenHourExpire
+       win_security_policy:
+         section: System Access
+         key: ForceLogoffWhenHourExpire
+         value: 1
+        
+     - name: Change the NewAdministratorName
+       win_security_policy:
+         section: System Access
+         key: NewAdministratorName
+         value: "_winadmin_"
+
+     - name: Change the NewGuestName
+       win_security_policy:
+         section: System Access
+         key: NewGuestName
+         value: "_winguest_"
+
+     - name:  Change the ClearTextPassword
+       win_security_policy:
+         section: System Access
+         key: ClearTextPassword
+         value: 0
+
+     - name: Change the LSAAnonymousNameLookup
+       win_security_policy:
+         section: System Access
+         key: LSAAnonymousNameLookup
+         value: 0
+        
+     - name: Change the EnableAdminAccount
+       win_security_policy:
+         section: System Access
+         key: EnableAdminAccount
+         value: 1 
+
+     - name: Change the EnableGuestAccount
+       win_security_policy:
+         section: System Access
+         key: EnableGuestAccount
+         value: 0 
+        
+     - name: Change the AuditSystemEvents
+       win_security_policy:
+         section: Event Audit
+         key: AuditSystemEvents
+         value: 0 
+        
+     - name: Change the AuditLogonEvents
+       win_security_policy:
+         section: Event Audit
+         key: AuditLogonEvents
+         value: 0 
+        
+     - name: Change the AuditObjectAccess
+       win_security_policy:
+         section: Event Audit
+         key: AuditObjectAccess
+         value: 0 
+        
+     - name: Change the AuditPrivilegeUse
+       win_security_policy:
+         section: Event Audit
+         key: AuditPrivilegeUse
+         value: 0 
+        
+     - name: Change the AuditPolicyChange
+       win_security_policy:
+         section: Event Audit
+         key: AuditPolicyChange
+         value: 0
+        
+     - name: Change the AuditAccountManage
+       win_security_policy:
+         section: Event Audit
+         key: AuditAccountManage
+         value: 0
+        
+     - name: Change the AuditProcessTracking
+       win_security_policy:
+         section: Event Audit
+         key: AuditProcessTracking
+         value: 0 
+        
+     - name: Change the AuditDSAccess
+       win_security_policy:
+         section: Event Audit
+         key: AuditDSAccess
+         value: 0
+        
+     - name: Change the AuditAccountLogon
+       win_security_policy:
+         section: Event Audit
+         key: AuditAccountLogon
+         value: 2
+
+     - name: Change the Recovery console Security Level
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel
+         value: 4,0
+
+     - name: Change the Recovery console Command
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SetCommand
+         value: 4,0
+
+     - name: Change the Allocate CDROms
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateCDRoms
+         value: 1,"1"
+
+     - name: Change the Allocate DASD
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateDASD
+         value: 1,"1"
+
+     - name: Change the Allocate Floppies
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateFloppies
+         value: 1,"1"
+
+     - name: Change the CachedLogons Count
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\CachedLogonsCount
+         value: 1,"0"
+
+     - name: Change Force Unlock Logon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ForceUnlockLogon
+         value: 4,0
+
+     - name: Password expiry Warning
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\PasswordExpiryWarning
+         value: 4,5
+
+     - name: Change the ScRemoveOption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ScRemoveOption
+         value: 1,"1"
+
+     - name: Change the ConsentPromptBehaviorAdmin
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin
+         value: 4,2
+
+     - name: Change the ConsentPromptBehaviorUser
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorUser
+         value: 4,0
+
+     - name: Change the DisableCAD
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableCAD
+         value: 4,0
+
+     - name: Change the DontDisplayLastUserName
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DontDisplayLastUserName
+         value: 4,1
+
+     - name: EnableLUA
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA
+         value: 4,1
+
+     - name: Change the EnableSecureUIAPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableSecureUIAPaths
+         value: 4,1
+
+     - name: Change the EnableUIADesktopToggle
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableUIADesktopToggle
+         value: 4,0
+
+     - name: Change the EnableVirtualization
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableVirtualization
+         value: 4,1
+
+     - name: FilterAdministratorToken
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\FilterAdministratorToken
+         value: 4,1
+
+     - name: Change the LegalNoticeCaption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeCaption
+         value: 1,""
+
+     - name: Change the LegalNoticeText
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText
+         value: 7,
+
+     - name: Change the PromptOnSecureDesktop
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop
+         value: 4,1
+     - name: Change the ScForceOption
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ScForceOption
+         value: 4,0
+     - name: Change the ShutdownWithoutLogon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ShutdownWithoutLogon
+         value: 4,0
+     - name: Change the UndockWithoutLogon
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\UndockWithoutLogon
+         value: 4,0
+     - name: Change the ValidateAdminCodeSignatures
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ValidateAdminCodeSignatures
+         value: 4,0
+     - name: Enable ForceKeyProtection
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Policies\Microsoft\Cryptography\ForceKeyProtection
+         value: 4,1
+     - name: Set AuthenticodeEnabled 
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\AuthenticodeEnabled
+         value: 4,1
+     - name: Change the AuditBaseObjects
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\AuditBaseObjects
+         value: 4,0
+     - name: Change the CrashOnAuditFail
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\CrashOnAuditFail
+         value: 4,0
+     - name: Change DisableDomainCreds
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds
+         value: 4,0
+     - name: Change EveryoneIncludesAnonymous
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\EveryoneIncludesAnonymous
+         value: 4,0
+     - name: Disable FIPSAlgorithmPolicy
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled
+         value: 4,0
+     - name: Change ForceGuest
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\ForceGuest
+         value: 4,0
+     - name: Change the FullPrivilegeAuditing
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\FullPrivilegeAuditing
+         value: 3,0
+     - name: LimitBlankPasswordUse
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\LimitBlankPasswordUse
+         value: 4,1
+     - name: Change the LmCompatibilityLevel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\LmCompatibilityLevel
+         value: 4,5
+     - name: Change the NTLMMinClientSec
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinClientSec
+         value: 4,537395200
+     - name: Change the NTLMMinServerSec
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinServerSec
+         value: 4,537395200
+     - name: Disable LM Hash
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash
+         value: 4,1
+     - name: RestrictAnonymous
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymous
+         value: 4,1
+     - name: RestrictAnonymousSAM
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymousSAM
+         value: 4,1
+     - name: Change the SCENoApplyLegacyAuditPolicy
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\SCENoApplyLegacyAuditPolicy
+         value: 4,1
+     - name: Change the UseMachineId
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Lsa\UseMachineId
+         value: 4,1
+     - name: Change the AddPrinterDrivers
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers\AddPrinterDrivers
+         value: 4,1
+     - name: Change the AllowedExactPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths\Machine
+         value: 7,System\CurrentControlSet\Control\ProductOptions,System\CurrentControlSet\Control\Server Applications,Software\Microsoft\Windows NT\CurrentVersion
+     - name: Change the AllowedPaths
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths\Machine
+         value: 7,System\CurrentControlSet\Control\Print\Printers|#|System\CurrentControlSet\Services\Eventlog|#|Software\Microsoft\OLAP Server|#|Software\Microsoft\Windows NT\CurrentVersion\Print|#|Software\Microsoft\Windows NT\CurrentVersion\Windows|#|System\CurrentControlSet\Control\ContentIndex|#|System\CurrentControlSet\Control\Terminal Server|#|System\CurrentControlSet\Control\Terminal Server\UserConfig|#|System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration|#|Software\Microsoft\Windows NT\CurrentVersion\Perflib|#|System\CurrentControlSet\Services\SysmonLog
+     - name: Change the ObCaseInsensitive
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\Kernel\ObCaseInsensitive
+         value: 4,1
+     - name: Change the ClearPageFileAtShutdown
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\ClearPageFileAtShutdown
+         value: 4,0
+     - name: Change the ProtectionMode
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\ProtectionMode
+         value: 4,1
+     - name: Change the SubSystems
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Control\Session Manager\SubSystems\optional
+         value: 7,Posix
+     - name: Change the AutoDisconnect
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\AutoDisconnect
+         value: 4,15
+     - name: Set EnableForcedLogOff
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableForcedLogOff
+         value: 4,1
+     - name: Set EnableSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableSecuritySignature
+         value: 4,1
+     - name: Set NullSessionPipes
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\NullSessionPipes
+         value: 7,
+     - name: Set RequireSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RequireSecuritySignature
+         value: 4,1
+     - name: RestrictNullSessAccess
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RestrictNullSessAccess
+         value: 4,1
+     - name: Disable PlainTextPassword
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnablePlainTextPassword
+         value: 4,0
+     - name: EnableSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnableSecuritySignature
+         value: 4,1
+     - name: RequireSecuritySignature
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\RequireSecuritySignature
+         value: 4,1
+     - name: Enable LDAPClientIntegrity
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientIntegrity
+         value: 4,1
+     - name: EnablePasswordChange
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\DisablePasswordChange
+         value: 4,0
+     - name: Set MaximumPasswordAge
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\MaximumPasswordAge
+         value: 4,30
+     - name: Change the RequireSignOrSeal
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireSignOrSeal
+         value: 4,1
+     - name: Change the RequireStrongKey
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireStrongKey
+         value: 4,1
+     - name: Change the SealSecureChannel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SealSecureChannel
+         value: 4,1
+     - name: Enable SignSecureChannel
+       win_security_policy:
+         section: Registry Values
+         key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SignSecureChannel
+         value: 4,1
+
+
+    
+
+     - name: Change the SeBackupPrivilege
+       win_user_right:
+         name: SeBackupPrivilege
+         users: 
+          - .\Administrators
+          - 'Backup Operators'
+         action: set
+
+     - name: Change the SeChangeNotifyPrivilege
+       win_user_right:
+         name: SeChangeNotifyPrivilege
+         users: 
+          - 'Authenticated Users'
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+          - .\Administrators
+          - 'Backup Operators'
+         action: set
+
+     - name: Change the SeSystemtimePrivilege
+       win_user_right:
+         name: SeSystemtimePrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - .\Administrators
+         action: set
+
+     - name: Change the SeCreatePagefilePrivilege
+       win_user_right:
+         name: SeCreatePagefilePrivilege
+         users: 
+          - .\Administrators
+         action: set
+
+     - name: Change the SeDebugPrivilege
+       win_user_right:
+         name: SeDebugPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteShutdownPrivilege
+       win_user_right:
+         name: SeRemoteShutdownPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAuditPrivilege
+       win_user_right:
+         name: SeAuditPrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+         action: set
+
+     - name: Change the SeIncreaseQuotaPrivilege
+       win_user_right:
+         name: SeIncreaseQuotaPrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+          - .\Administrators
+         action: set
+
+     - name: Change the SeIncreaseBasePriorityPrivilege
+       win_user_right:
+         name: SeIncreaseBasePriorityPrivilege
+         users: 
+          - .\Administrators
+         action: set
+
+     - name: Change the SeLoadDriverPrivilege
+       win_user_right:
+         name: SeLoadDriverPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeBatchLogonRight
+       win_user_right:
+         name: SeBatchLogonRight
+         users: 
+          - .\Administrators
+          - 'Backup Operators'
+          - 'Performance Log Users'
+         action: set
+
+
+     - name: Change the SeNetworkLogonRight
+       win_user_right:
+         name: SeNetworkLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeInteractiveLogonRight
+       win_user_right:
+         name: SeInteractiveLogonRight
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSecurityPrivilege
+       win_user_right:
+         name: SeSecurityPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemEnvironmentPrivilege
+       win_user_right:
+         name: SeSystemEnvironmentPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeProfileSingleProcessPrivilege
+       win_user_right:
+         name: SeProfileSingleProcessPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeSystemProfilePrivilege
+       win_user_right:
+         name: SeSystemProfilePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeAssignPrimaryTokenPrivilege
+       win_user_right:
+         name: SeAssignPrimaryTokenPrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+         action: set
+
+     - name: Change the SeRestorePrivilege
+       win_user_right:
+         name: SeRestorePrivilege
+         users: 
+          - Administrators
+          - 'Backup Operators'
+         action: set
+
+     - name: Change the SeShutdownPrivilege
+       win_user_right:
+         name: SeShutdownPrivilege
+         users: 
+          - Administrators
+          - 'Backup Operators'
+         action: set
+
+     - name: Change the SeTakeOwnershipPrivilege
+       win_user_right:
+         name: SeTakeOwnershipPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDenyNetworkLogonRight
+       win_user_right:
+         name: SeDenyNetworkLogonRight
+         users: 
+          - Guests
+          - S-1-5-7
+         action: set
+
+     - name: Change the SeDenyBatchLogonRight
+       win_user_right:
+         name: SeDenyBatchLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeDenyServiceLogonRight
+       win_user_right:
+         name: SeDenyServiceLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeDenyInteractiveLogonRight
+       win_user_right:
+         name: SeDenyInteractiveLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeUndockPrivilege
+       win_user_right:
+         name: SeUndockPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeManageVolumePrivilege
+       win_user_right:
+         name: SeManageVolumePrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeRemoteInteractiveLogonRight
+         users: 
+          - Administrators
+          - 'Remote Desktop Users'
+         action: set
+
+     - name: Change the SeDenyRemoteInteractiveLogonRight
+       win_user_right:
+         name: SeDenyRemoteInteractiveLogonRight
+         users: 
+          - Guests
+         action: set
+
+     - name: Change the SeImpersonatePrivilege
+       win_user_right:
+         name: SeImpersonatePrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+          - .\Administrators
+          - SERVICE
+         action: set
+
+
+     - name: Change the SeCreateGlobalPrivilege
+       win_user_right:
+         name: SeCreateGlobalPrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - 'NETWORK SERVICE'
+          - .\Administrators
+          - SERVICE
+         action: set
+
+
+     - name: Change the SeIncreaseWorkingSetPrivilege
+       win_user_right:
+         name: SeIncreaseWorkingSetPrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - .\Administrators
+         action: set
+
+     - name: Change the SeTimeZonePrivilege
+       win_user_right:
+         name: SeTimeZonePrivilege
+         users: 
+          - 'LOCAL SERVICE'
+          - .\Administrators
+         action: set
+
+     - name: Change the SeCreateSymbolicLinkPrivilege
+       win_user_right:
+         name: SeCreateSymbolicLinkPrivilege
+         users: 
+          - Administrators
+         action: set
+
+     - name: Change the SeDelegateSessionUserImpersonatePrivilege
+       win_user_right:
+         name: SeDelegateSessionUserImpersonatePrivilege
+         users: 
+          - Administrators
+         action: set
+
+
+      - name: Disable Bluetooth service
+        win_service:
+          name: bthserv
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Diagnostic Service Host
+        win_service:
+          name: WdiServiceHost
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Downloaded Maps Manager
+        win_service:
+          name: MapBroker
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Print Spooler
+        win_service:
+          name: Spooler
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Smart Card
+        win_service:
+          name: SCardSvr
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Smart Card Removal Policy
+        win_service:
+          name: SCPolicySvc
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Touch Keyboard and Handwriting Panel
+        win_service:
+          name: TabletInputService
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable User Experience Virtualization Service
+        win_service:
+          name: UevAgentService
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable WalletService
+        win_service:
+          name: WalletService
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Audio
+        win_service:
+          name: Audiosrv
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Audio Endpoint Builder
+        win_service:
+          name: AudioEndpointBuilder
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Biometric Service
+        win_service:
+          name: FrameServer 
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Camera Frame Server
+        win_service:
+          name: FrameServer
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Defender Advanced Threat Protection Service
+        win_service:
+          name: Sense
+          start_mode: disabled
+          state: stopped
+          
+      - name: Disable Windows Encryption Provider Host Service
+        win_service:
+          name: WEPHOSTSVC
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Image Acquisition Service
+        win_service:
+          name: stisvc
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Insider Service
+        win_service:
+          name: wisvc
+          start_mode: disabled
+          state: stopped
+
+      - name: Disable Windows Mobile HotSpot Service
+        win_service:
+          name: icssvc
+          start_mode: disabled
+          state: stopped
+
+
+      - name: Disable Windows Search
+        win_service:
+          name: WSearch
+          start_mode: disabled
+          state: stopped
+
+
+      - name: Disable Wired AutoConfig
+        win_service:
+          name: dot3svc
+          start_mode: disabled
+          state: stopped
