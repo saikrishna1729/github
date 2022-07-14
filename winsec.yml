@@ -774,126 +774,121 @@
          users: 
           - Administrators
          action: set
-
-
-      - name: Disable Bluetooth service
-        win_service:
+     - name: Disable Bluetooth service
+       win_service:
           name: bthserv
           start_mode: disabled
           state: stopped
 
-      - name: Disable Diagnostic Service Host
-        win_service:
+     - name: Disable Diagnostic Service Host
+       win_service:
           name: WdiServiceHost
           start_mode: disabled
           state: stopped
 
-      - name: Disable Downloaded Maps Manager
-        win_service:
+     - name: Disable Downloaded Maps Manager
+       win_service:
           name: MapBroker
           start_mode: disabled
           state: stopped
 
-      - name: Disable Print Spooler
-        win_service:
+     - name: Disable Print Spooler
+       win_service:
           name: Spooler
           start_mode: disabled
           state: stopped
 
-      - name: Disable Smart Card
-        win_service:
+     - name: Disable Smart Card
+       win_service:
           name: SCardSvr
           start_mode: disabled
           state: stopped
 
-      - name: Disable Smart Card Removal Policy
-        win_service:
+     - name: Disable Smart Card Removal Policy
+       win_service:
           name: SCPolicySvc
           start_mode: disabled
           state: stopped
 
-      - name: Disable Touch Keyboard and Handwriting Panel
-        win_service:
+     - name: Disable Touch Keyboard and Handwriting Panel
+       win_service:
           name: TabletInputService
           start_mode: disabled
           state: stopped
 
-      - name: Disable User Experience Virtualization Service
-        win_service:
+     - name: Disable User Experience Virtualization Service
+       win_service:
           name: UevAgentService
           start_mode: disabled
           state: stopped
 
-      - name: Disable WalletService
-        win_service:
+     - name: Disable WalletService
+       win_service:
           name: WalletService
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Audio
-        win_service:
+     - name: Disable Windows Audio
+       win_service:
           name: Audiosrv
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Audio Endpoint Builder
-        win_service:
+     - name: Disable Windows Audio Endpoint Builder
+       win_service:
           name: AudioEndpointBuilder
           start_mode: disabled
           state: stopped
 
-      - name: Disable Biometric Service
-        win_service:
+     - name: Disable Biometric Service
+       win_service:
           name: FrameServer 
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Camera Frame Server
-        win_service:
+     - name: Disable Windows Camera Frame Server
+       win_service:
           name: FrameServer
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Defender Advanced Threat Protection Service
-        win_service:
+     - name: Disable Windows Defender Advanced Threat Protection Service
+       win_service:
           name: Sense
           start_mode: disabled
           state: stopped
           
-      - name: Disable Windows Encryption Provider Host Service
-        win_service:
+     - name: Disable Windows Encryption Provider Host Service
+       win_service:
           name: WEPHOSTSVC
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Image Acquisition Service
-        win_service:
+     - name: Disable Windows Image Acquisition Service
+       win_service:
           name: stisvc
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Insider Service
-        win_service:
+     - name: Disable Windows Insider Service
+       win_service:
           name: wisvc
           start_mode: disabled
           state: stopped
 
-      - name: Disable Windows Mobile HotSpot Service
-        win_service:
+     - name: Disable Windows Mobile HotSpot Service
+       win_service:
           name: icssvc
           start_mode: disabled
           state: stopped
 
-
-      - name: Disable Windows Search
-        win_service:
+     - name: Disable Windows Search
+       win_service:
           name: WSearch
           start_mode: disabled
           state: stopped
-
-
-      - name: Disable Wired AutoConfig
-        win_service:
+     - name: Disable Wired AutoConfig
+       win_service:
           name: dot3svc
           start_mode: disabled
           state: stopped
