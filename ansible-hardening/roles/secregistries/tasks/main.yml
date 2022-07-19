@@ -460,7 +460,7 @@
     data: 1
     type: dword
   
-  - name: Ensure 'Do not show feedback notifications' is set to 'Enabled'
+- name: Ensure 'Do not show feedback notifications' is set to 'Enabled'
   win_regedit:
     path: HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection
     name: DoNotShowFeedbackNotifications
