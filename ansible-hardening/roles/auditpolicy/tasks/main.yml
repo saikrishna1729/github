@@ -20,15 +20,55 @@
      audit_type: success, failure
 
                  
+- name: Change the Audit Authentication Policy Change
+  win_audit_policy_system:
+     subcategory: Authentication Policy Change
+     audit_type: success
+                
+- name: Change the Audit Logon
+  win_audit_policy_system:
+     subcategory: Logon
+     audit_type: success, failure
+
+                 
+- name: Change the Audit Logoff
+  win_audit_policy_system:
+     subcategory: Logoff
+     audit_type: success
+                      
+- name: Change the Audit Policy Change
+  win_audit_policy_system:
+     subcategory: Audit Policy Change
+     audit_type: success
+                           
+- name: Change the Audit Process creation
+  win_audit_policy_system:
+     subcategory: Process Creation
+     audit_type: success
+                           
+- name: Change the Audit Security Group Management
+  win_audit_policy_system:
+     subcategory: Security Group Management
+     audit_type: success
+                           
+- name: Change the Audit Security State Change
+  win_audit_policy_system:
+     subcategory: Security State Change
+     audit_type: success
+                         
+- name: Enable Audit Special Logon
+  win_audit_policy_system:
+     subcategory: Special Logon
+     audit_type: success
+                  
+- name: Ensure 'Audit System Integrity' is set
+  win_audit_policy_system:
+     subcategory: System Integrity
+     audit_type: success, failure
+
 - name: Change the Audit Group Membership
   win_audit_policy_system:
      subcategory: Group Membership
-     audit_type: success
-
-                 
-- name: Change the Audit PNP Activity
-  win_audit_policy_system:
-     subcategory: PNP Activity
      audit_type: success
                  
 - name: Change the Audit Removable Storage
@@ -100,5 +140,5 @@
   win_security_policy:
      section: Event Audit
      key: AuditAccountLogon
-     value: 2            
+     value: 2          
      
