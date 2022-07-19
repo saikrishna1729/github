@@ -165,9 +165,9 @@
    value: 4,0
 - name: Change DisableDomainCreds
   win_security_policy:
-  section: Registry Values
-  key: MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds
-  value: 4,0
+   section: Registry Values
+   key: MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds
+   value: 4,0
 - name: Change EveryoneIncludesAnonymous
   win_security_policy:
    section: Registry Values
