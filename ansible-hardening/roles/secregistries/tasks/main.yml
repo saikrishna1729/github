@@ -1,681 +1,104 @@
-- name: Change the Recovery console Security Level
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel
-   value: 4,0
+- name: Change the MPSSVC Rule-Level Policy Change
+  win_audit_policy_system:
+     subcategory: MPSSVC Rule-Level Policy Change
+     audit_type: success, failure
 
-- name: Change the Recovery console Command 
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SetCommand
-   value: 4,0
+- name: Change the Audit Account Lockout Change
+  win_audit_policy_system:
+     subcategory: Account Lockout
+     audit_type: success, failure
+               
+- name: Change the Other Object Access Events
+  win_audit_policy_system:
+     subcategory: Other Object Access Events
+     audit_type: success, failure
 
-- name: Change the Allocate CDROms
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateCDRoms
-    value: 1,"1"
+                 
+- name: Change the Audit Credential Validation
+  win_audit_policy_system:
+     subcategory: Audit Credential Validation
+     audit_type: success, failure
 
-- name: Change the Allocate DASD
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateDASD
-    value: 1,"1"
+                 
+- name: Change the Audit Group Membership
+  win_audit_policy_system:
+     subcategory: Audit Group Membership
+     audit_type: success
 
-- name: Change the Allocate Floppies
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\AllocateFloppies
-    value: 1,"1"
+                 
+- name: Change the Audit PNP Activity
+  win_audit_policy_system:
+     subcategory: Audit PNP Activity
+     audit_type: success
+                 
+- name: Change the Audit Removable Storage
+  win_audit_policy_system:
+     subcategory: Audit Removable Storage
+     audit_type: success, failure
 
-- name: Change the CachedLogons Count
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\CachedLogonsCount
-    value: 1,"0"
+                 
+- name: Change the Audit Security System Extension
+  win_audit_policy_system:
+     subcategory: Audit Security System Extension
+     audit_type: success
 
-- name: Change Force Unlock Logon
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ForceUnlockLogon
-    value: 4,0
+                 
+- name: Change the Audit Sensitive Privilege Use
+  win_audit_policy_system:
+     subcategory: Audit Sensitive Privilege Use
+     audit_type: success, failure
 
-- name: Password expiry Warning
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\PasswordExpiryWarning
-    value: 4,5
+                          
+- name: Change the Audit User Account Management
+  win_audit_policy_system:
+     subcategory: Audit User Account Management
+     audit_type: success, failure
 
-- name: Change the ScRemoveOption
+- name: Change the AuditLogonEvents
   win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ScRemoveOption
-    value: 1,"1"
-
-- name: Change the ConsentPromptBehaviorAdmin
+     section: Event Audit
+     key: AuditLogonEvents
+     value: 0 
+                
+- name: Change the AuditObjectAccess
   win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin
-    value: 4,2
-
-- name: Change the ConsentPromptBehaviorUser
+     section: Event Audit
+     key: AuditObjectAccess
+     value: 0 
+        
+- name: Change the AuditPrivilegeUse
   win_security_policy:
-    section: Registry Values
-    key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorUser
-    value: 4,0
-
-- name: Change the DisableCAD
+     section: Event Audit
+     key: AuditPrivilegeUse
+     value: 0 
+        
+- name: Change the AuditPolicyChange
   win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableCAD
-   value: 4,0
-
-- name: Change the DontDisplayLastUserName
+     section: Event Audit
+     key: AuditPolicyChange
+     value: 0
+        
+- name: Change the AuditAccountManage
   win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DontDisplayLastUserName
-   value: 4,1
-
-- name: EnableLUA
+     section: Event Audit
+     key: AuditAccountManage
+     value: 0
+        
+- name: Change the AuditProcessTracking
   win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA
-   value: 4,1
-
-- name: Change the EnableSecureUIAPaths
+     section: Event Audit
+     key: AuditProcessTracking
+     value: 0 
+        
+- name: Change the AuditDSAccess
   win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableSecureUIAPaths
-   value: 4,1
-
-- name: Change the EnableUIADesktopToggle
+     section: Event Audit
+     key: AuditDSAccess
+     value: 0
+        
+- name: Change the AuditAccountLogon
   win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableUIADesktopToggle
-   value: 4,0
-
-- name: Change the EnableVirtualization
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableVirtualization
-   value: 4,1
-
-- name: FilterAdministratorToken
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\FilterAdministratorToken
-   value: 4,1
-
-- name: Change the LegalNoticeCaption
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeCaption
-   value: 1,""
-
-- name: Change the LegalNoticeText
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText
-   value: 7,
-
-- name: Change the PromptOnSecureDesktop
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop
-   value: 4,1
-- name: Change the ScForceOption
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ScForceOption
-   value: 4,0
-- name: Change the ShutdownWithoutLogon
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ShutdownWithoutLogon
-   value: 4,0
-- name: Change the UndockWithoutLogon
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\UndockWithoutLogon
-   value: 4,0
-- name: Change the ValidateAdminCodeSignatures
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ValidateAdminCodeSignatures
-   value: 4,0
-- name: Enable ForceKeyProtection
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Policies\Microsoft\Cryptography\ForceKeyProtection
-   value: 4,1
-- name: Set AuthenticodeEnabled 
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\AuthenticodeEnabled
-   value: 4,1
-- name: Change the AuditBaseObjects
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\AuditBaseObjects
-   value: 4,0
-- name: Change the CrashOnAuditFail
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\CrashOnAuditFail
-   value: 4,0
-- name: Change DisableDomainCreds
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds
-   value: 4,0
-- name: Change EveryoneIncludesAnonymous
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\EveryoneIncludesAnonymous
-   value: 4,0
-- name: Disable FIPSAlgorithmPolicy
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled
-   value: 4,0
-- name: Change ForceGuest
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\ForceGuest
-   value: 4,0
-- name: Change the FullPrivilegeAuditing
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\FullPrivilegeAuditing
-   value: 3,0
-- name: LimitBlankPasswordUse
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\LimitBlankPasswordUse
-   value: 4,1
-- name: Change the LmCompatibilityLevel
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\LmCompatibilityLevel
-   value: 4,5
-- name: Change the NTLMMinClientSec
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinClientSec
-   value: 4,537395200
-- name: Change the NTLMMinServerSec
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\NTLMMinServerSec
-   value: 4,537395200
-- name: Disable LM Hash
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash
-   value: 4,1
-- name: RestrictAnonymous
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymous
-   value: 4,1
-- name: RestrictAnonymousSAM
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymousSAM
-   value: 4,1
-- name: Change the SCENoApplyLegacyAuditPolicy
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\SCENoApplyLegacyAuditPolicy
-   value: 4,1
-- name: Change the UseMachineId
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Lsa\UseMachineId
-   value: 4,1
-- name: Change the AddPrinterDrivers
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers\AddPrinterDrivers
-   value: 4,1
-- name: Change the AllowedExactPaths
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths\Machine
-   value: 7,System\CurrentControlSet\Control\ProductOptions,System\CurrentControlSet\Control\Server Applications,Software\Microsoft\Windows NT\CurrentVersion
-- name: Change the AllowedPaths
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths\Machine
-   value: 7,System\CurrentControlSet\Control\Print\Printers|#|System\CurrentControlSet\Services\Eventlog|#|Software\Microsoft\OLAP Server|#|Software\Microsoft\Windows NT\CurrentVersion\Print|#|Software\Microsoft\Windows NT\CurrentVersion\Windows|#|System\CurrentControlSet\Control\ContentIndex|#|System\CurrentControlSet\Control\Terminal Server|#|System\CurrentControlSet\Control\Terminal Server\UserConfig|#|System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration|#|Software\Microsoft\Windows NT\CurrentVersion\Perflib|#|System\CurrentControlSet\Services\SysmonLog
-- name: Change the ObCaseInsensitive
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Session Manager\Kernel\ObCaseInsensitive
-   value: 4,1
-- name: Change the ClearPageFileAtShutdown
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\ClearPageFileAtShutdown
-   value: 4,0
-- name: Change the ProtectionMode
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Control\Session Manager\ProtectionMode
-   value: 4,1
-- name: Change the SubSystems
-  win_security_policy:
-    section: Registry Values
-    key: MACHINE\System\CurrentControlSet\Control\Session Manager\SubSystems\optional
-    value: 7,Posix
-- name: Change the AutoDisconnect
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\AutoDisconnect
-   value: 4,15
-- name: Set EnableForcedLogOff
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableForcedLogOff
-   value: 4,1
-- name: Set EnableSecuritySignature
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableSecuritySignature
-   value: 4,1
-- name: Set NullSessionPipes
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\NullSessionPipes
-   value: 7,
-- name: Set RequireSecuritySignature
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RequireSecuritySignature
-   value: 4,1
-- name: RestrictNullSessAccess
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RestrictNullSessAccess
-   value: 4,1
-- name: Disable PlainTextPassword
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnablePlainTextPassword
-   value: 4,0
-- name: EnableSecuritySignature
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnableSecuritySignature
-   value: 4,1
-- name: RequireSecuritySignature
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\RequireSecuritySignature
-   value: 4,1
-- name: Enable LDAPClientIntegrity
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientIntegrity
-   value: 4,1
-- name: EnablePasswordChange
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\DisablePasswordChange
-   value: 4,0
-- name: Set MaximumPasswordAge
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\MaximumPasswordAge
-   value: 4,30
-- name: Change the RequireSignOrSeal
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireSignOrSeal
-   value: 4,1
-- name: Change the RequireStrongKey
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireStrongKey
-   value: 4,1
-- name: Change the SealSecureChannel
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SealSecureChannel
-   value: 4,1
-- name: Enable SignSecureChannel
-  win_security_policy:
-   section: Registry Values
-   key: MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\SignSecureChannel
-   value: 4,1
-
-
-- name: Enable 'Scan removable drives'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Scan
-    name: DisableRemovableDriveScanning
-    data: 0
-    type: dword
-
-- name: Ensure 'Allow Cortana above lock screen' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search
-    name: AllowCortanaAboveLock
-    data: 0
-    type: dword
-
-- name: Ensure 'Allow Cortana' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search
-    name: AllowCortana
-    data: 0
-    type: dword
-
-- name: Ensure 'Allow Input Personalization' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Scan
-    name: DisableRemovableDriveScanning
-    data: 0
-    type: dword
-
-- name: Ensure 'Allow Input Personalization' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\InputPersonalization
-    name: AllowInputPersonalization
-    data: 0
-    type: dword
-
-
-- name: Ensure 'Allow search and Cortana to use location' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search
-    name: AllowSearchToUseLocation
-    data: 0
-    type: dword
-
-- name: Ensure 'Allow Telemetry' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection
-    name: AllowTelemetry
-    data: 0
-    type: dword
-
-- name: Ensure Application Specify the maximum log file size Enabled
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application 
-    name: MaxSize
-    data: 32768
-    type: dword
-
-- name: Ensure 'Block user from showing account details on sign-in' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\Software\Policies\Microsoft\Windows\System
-    name: BlockUserFromShowingAccountDetailsOnSignin
-    data: 1
-    type: dword
-
-- name: Ensure 'Configure Solicited Remote Assistance' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-    name: fAllowToGetHelp
-    data: 0
-    type: dword
-
-- name: Ensure 'Configure Windows SmartScreen' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\System
-    name: EnableSmartScreen
-    data: 1
-    type: dword
-
-- name: Ensure 'Disallow Autoplay for non-volume devices' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer
-    name: fAllowToGetHelp
-    data: 0
-    type: dword
-- name: Ensure 'Disallow Digest authentication' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client
-    name: AllowDigest
-    data: 0
-    type: dword
-- name: Ensure 'Do not allow passwords to be saved' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-    name: DisablePasswordSaving
-    data: 1
-    type: dword
-- name: Ensure 'Do not display network selection UI' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\System
-    name: DontDisplayNetworkSelectionUI
-    data: 1
-    type: dword
-
-- name: Ensure 'Do not display the password reveal button' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\CredUI
-    name: DisablePasswordReveal
-    data: 1
-    type: dword
-  
-- name: Ensure 'Do not show feedback notifications' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection
-    name: DoNotShowFeedbackNotifications
-    data: 1
-    type: dword
-
-- name: Ensure 'Enable insecure guest logons' is set to 'Disabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\LanmanWorkstation
-    name: AllowInsecureGuestAuth
-    data: 0
-    type: dword
-
-- name: Ensure Interactive logon Do not display last user name is set
-  win_regedit:
-    path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-    name: DontDisplayLastUserName
-    data: 1
-    type: dword
-
-- name: Ensure 'Microsoft network client Digitally sign communications (always)' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters 
-    name: RequireSecuritySignature
-    data: 1
-    type: dword
-
-- name: Ensure 'Microsoft network server Digitally sign communications (always)' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters 
-    name: RequireSecuritySignature
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Microsoft network server Digitally sign communications (if client agrees)' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters 
-    name: EnableSecuritySignature
-    data: 1
-    type: dword
-
-- name: Ensure Network access Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled' (MS only)
-  win_regedit:
-    path: HKLM\SYSTEM\CurrentControlSet\Control\Lsa
-    name: RestrictAnonymous
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Allow Local System to use computer identity for NTLM' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SYSTEM\CurrentControlSet\Control\Lsa 
-    name: UseMachineId
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Prevent downloading of enclosures' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds
-    name: DisableEnclosureDownload
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization
-    name: NoLockScreenCamera
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization
-    name: NoLockScreenSlideshow
-    data: 1
-    type: dword
-
-
-- name: Ensure 'Prohibit installation and configuration of Network Bridge on your DNS domain network' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Network Connections
-    name: NC_AllowNetBridge_NLA
-    data: 0
-    type: dword
-
-
-- name: Ensure 'Prohibit use of Internet Connection Sharing on your DNS domain network' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Network Connections
-    name: NC_ShowSharedAccessUI
-    data: 0
-    type: dword
-
-
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-
-
-
-- name: Set the default behavior for AutoRun is set
-  win_regedit:
-    path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-    name: NoAutorun
-    data: 1
-    type: dword
-
-
-- name: Specify the maximum log file size is set to 32,768 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Setup 
-    name: MaxSize
-    data: 32768
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\System  
-    name: MaxSize
-    data: 32768
-    type: dword
-- name: Ensure 'Turn off app notifications on the lock screen' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\System
-    name: DisableLockScreenAppNotifications
-    data: 1
-    type: dword
-- name: Ensure 'Turn off Autoplay' is set to All drives
-  win_regedit:
-    path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-    name: NoDriveTypeAutoRun
-    data: 255
-    type: dword
-
-- name: Ensure 'Turn off Internet Connection Wizard if URL connection is referring to Microsoft.com' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\Internet Connection Wizard
-    name: ExitOnMSICW
-    data: 1
-    type: dword
-- name: Ensure 'Turn off multicast name resolution' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
-    name: EnableMulticast
-    data: 0
-    type: dword
-- name: Ensure UAC Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled'
-  win_regedit:
-    path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-    name: FilterAdministratorToken
-    data: 1
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
-  win_regedit:
-    path: HKLM\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
-    type: dword
+     section: Event Audit
+     key: AuditAccountLogon
+     value: 2            
+     
