@@ -1,0 +1,19 @@
+---
+ - name: windows hardening
+   hosts: all
+   gather_facts: false
+   ignore_errors: True
+   become: yes
+
+   roles: 
+     - auditpolicy
+     - passwordpolicy
+     - secpolicy
+     - secregistries
+     - servicespolicy
+     - userrights
+
+
+
+
+    

@@ -1,0 +1,104 @@
+- name: Change the MPSSVC Rule-Level Policy Change
+  win_audit_policy_system:
+     subcategory: MPSSVC Rule-Level Policy Change
+     audit_type: success and failure
+
+- name: Change the Audit Account Lockout Change
+  win_audit_policy_system:
+     subcategory: Audit Account Lockout
+     audit_type: success and failure
+               
+- name: Change the Other Object Access Events
+  win_audit_policy_system:
+     subcategory: Other Object Access Events
+     audit_type: success and failure
+
+                 
+- name: Change the Audit Credential Validation
+  win_audit_policy_system:
+     subcategory: Audit Credential Validation
+     audit_type: success and failure
+
+                 
+- name: Change the Audit Group Membership
+  win_audit_policy_system:
+     subcategory: Audit Group Membership
+     audit_type: success
+
+                 
+- name: Change the Audit PNP Activity
+  win_audit_policy_system:
+     subcategory: Audit PNP Activity
+     audit_type: success
+                 
+- name: Change the Audit Removable Storage
+  win_audit_policy_system:
+     subcategory: Audit Removable Storage
+     audit_type: success and failure
+
+                 
+- name: Change the Audit Security System Extension
+  win_audit_policy_system:
+     subcategory: Audit Security System Extension
+     audit_type: success
+
+                 
+- name: Change the Audit Sensitive Privilege Use
+  win_audit_policy_system:
+     subcategory: Audit Sensitive Privilege Use
+     audit_type: success and failure
+
+                          
+- name: Change the Audit User Account Management
+  win_audit_policy_system:
+     subcategory: Audit User Account Management
+     audit_type: success and failure
+
+- name: Change the AuditLogonEvents
+  win_security_policy:
+     section: Event Audit
+     key: AuditLogonEvents
+     value: 0 
+                
+- name: Change the AuditObjectAccess
+  win_security_policy:
+     section: Event Audit
+     key: AuditObjectAccess
+     value: 0 
+        
+- name: Change the AuditPrivilegeUse
+  win_security_policy:
+     section: Event Audit
+     key: AuditPrivilegeUse
+     value: 0 
+        
+- name: Change the AuditPolicyChange
+  win_security_policy:
+     section: Event Audit
+     key: AuditPolicyChange
+     value: 0
+        
+- name: Change the AuditAccountManage
+  win_security_policy:
+     section: Event Audit
+     key: AuditAccountManage
+     value: 0
+        
+- name: Change the AuditProcessTracking
+  win_security_policy:
+     section: Event Audit
+     key: AuditProcessTracking
+     value: 0 
+        
+- name: Change the AuditDSAccess
+  win_security_policy:
+     section: Event Audit
+     key: AuditDSAccess
+     value: 0
+        
+- name: Change the AuditAccountLogon
+  win_security_policy:
+     section: Event Audit
+     key: AuditAccountLogon
+     value: 2            
+     

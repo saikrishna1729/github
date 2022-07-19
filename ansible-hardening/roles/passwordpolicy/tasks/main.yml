@@ -1,0 +1,48 @@
+- name: Change the MinimumPasswordAge
+  win_security_policy:
+     section: System Access
+     key: MinimumPasswordAge
+     value: 2
+
+- name:  Change the MaximumPasswordAge
+  win_security_policy:
+     section: System Access
+     key: MaximumPasswordAge
+     value: 42
+
+- name: Change the MinimumPasswordLength
+  win_security_policy:
+     section: System Access
+     key: MinimumPasswordLength
+     value: 8
+        
+- name: Change the PasswordComplexity
+  win_security_policy:
+     section: System Access
+     key: PasswordComplexity
+     value: 1
+
+- name: Change the LockoutBadCount
+  win_security_policy:
+     section: System Access
+     key: LockoutBadCount
+     value: 0
+        
+
+- name:  Change the RequireLogonToChangePassword
+  win_security_policy:
+     section: System Access
+     key: RequireLogonToChangePassword
+     value: 0
+
+- name: Change the ForceLogoffWhenHourExpire
+  win_security_policy:
+     section: System Access
+     key: ForceLogoffWhenHourExpire
+     value: 1
+
+- name: Change the Password History
+  win_security_policy:
+     section: System Access
+     key: PasswordHistorySize
+     value: 25
