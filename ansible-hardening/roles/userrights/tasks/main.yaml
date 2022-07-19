@@ -98,7 +98,7 @@
     name: SeNetworkLogonRight
     users: 
      - Administrators
-     action: set
+    action: set
 
 - name: Change the SeInteractiveLogonRight
   win_user_right:
