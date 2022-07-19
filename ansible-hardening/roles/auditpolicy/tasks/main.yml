@@ -140,5 +140,5 @@
   win_security_policy:
      section: Event Audit
      key: AuditAccountLogon
-     value: 2          
+     value: 1          
      
