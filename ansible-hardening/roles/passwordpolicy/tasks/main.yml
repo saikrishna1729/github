@@ -14,7 +14,7 @@
   win_security_policy:
      section: System Access
      key: MinimumPasswordLength
-     value: 8
+     value: 15
         
 - name: Change the PasswordComplexity
   win_security_policy:
