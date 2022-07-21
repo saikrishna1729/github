@@ -625,57 +625,173 @@
     name: MaxSize
     data: 196608
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+- name: Ensure 'Always prompt for password upon connection' is set to 'Enabled'
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+    name: fPromptForPassword
+    data: 1
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+
+- name: Ensure Windows Firewall Domain Firewall state is set to 'On (recommended)'
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: KLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: EnableFirewall
+    data: 1
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+- name: Ensure Windows Firewall Domain Firewall Default Outbound
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: KLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: DefaultOutboundAction
+    data: 0
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+- name: Windows Firewall Domain Allow unicast response
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: KLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: DisableUnicastResponsesToMulticastBroadcast
+    data: 0
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+    
+- name: Ensure Windows Firewall Private Firewall state is set to 'On (recommended)'
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile
+    name: EnableFirewall
+    data: 1
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+- name: Ensure Windows Firewall Private Firewall Default Outbound
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: KLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile
+    name: DefaultOutboundAction
+    data: 0
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+    
+- name: Windows Firewall Private Allow unicast response
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile
+    name: DisableUnicastResponsesToMulticastBroadcast
+    data: 0
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+
+- name: Ensure Windows Firewall Public Firewall state is set to 'On (recommended)'
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile
+    name: EnableFirewall
+    data: 1
     type: dword
-- name: Ensure Specify the maximum log file size is set to 196,608 or greater
+
+- name: Ensure Windows Firewall Domain Setting Apply local connection security rules' is set to 'Yes (default)'
   win_regedit:
-    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security 
-    name: MaxSize
-    data: 196608
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: AllowLocalIPsecPolicyMerge
+    data: 1
+    type: dword
+
+- name: Ensure Windows Firewall Private Setting Apply local connection security rules' is set to 'Yes (default)'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile
+    name: AllowLocalIPsecPolicyMerge
+    data: 1
+    type: dword
+
+
+- name: Ensure Windows Firewall Public Setting Apply local connection security rules' is set to 'Yes (default)'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile
+    name: AllowLocalIPsecPolicyMerge
+    data: 1
+    type: dword
+    
+
+- name: Ensure Windows Firewall Public Firewall Default Outbound
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile
+    name: DefaultOutboundAction
+    data: 0
+    type: dword
+
+- name: Ensure Windows Firewall Public Settings Display a notification' is set to 'No'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile
+    name: DisableNotifications
+    data: 1
+    type: dword
+
+- name: Ensure Windows Firewall Private Settings Display a notification' is set to 'No'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile
+    name: DisableNotifications
+    data: 1
+    type: dword
+
+- name: Ensure Windows Firewall Domain Settings Display a notification' is set to 'No'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: DisableNotifications
+    data: 1
+    type: dword
+
+- name: Windows Firewall Public Allow unicast response
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile
+    name: DisableUnicastResponsesToMulticastBroadcast
+    data: 1
+    type: dword
+
+- name: Ensure 'Enable RPC Endpoint Mapper Client Authentication' is set to 'Enabled' (MS only)
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Rpc
+    name: EnableAuthEpResolution
+    data: 1
+    type: dword
+
+    
+- name: Ensure 'Require secure RPC communication' is set to 'Enabled'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+    name: fEncryptRPCTraffic
+    data: 1
+    type: dword
+
+
+- name: Enable 'Send file samples when further analysis is required' for 'Send Safe Samples'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\SpyNet
+    name: SubmitSamplesConsent
+    data: 1
+    type: dword
+
+- name: Ensure 'Allow Microsoft accounts to be optional' is set to 'Enabled'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: MSAOptional
+    data: 1
+    type: dword
+
+- name: Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled Good, unknown and bad but critical'
+  win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Policies\EarlyLaunch
+    name: DriverLoadPolicy
+    data: 3
+    type: dword
+
+
+- name: Ensure 'Devices Allowed to format and eject removable media' is set to 'Administrators'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    name: AllocateDASD
+    data: 1
+    type: dword
+
+- name: Ensure 'Disallow WinRM from storing RunAs credentials' is set to 'Enabled'
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service
+    name: DisableRunAs
+    data: 1
     type: dword
